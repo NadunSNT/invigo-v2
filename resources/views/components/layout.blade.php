@@ -1,3 +1,13 @@
+@php
+    function formatUrlPath($string) {
+        if (strpos($string, ' ') !== false) {
+            return $string;
+        }
+
+        return str_replace('_', ' ', $string);
+    }
+@endphp
+
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="enable" data-theme="default" data-theme-colors="default" data-bs-theme="dark">
 
@@ -9,24 +19,28 @@
     <meta content="Invigo v2 by Introps IT" name="description" />
     <meta content="Introps IT" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
     <!-- jsvectormap css -->
-    <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
 
     <!--Swiper slider css-->
-    <link href="assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Layout config Js -->
-    <script src="assets/js/layout.js"></script>
+    <script src="/assets/js/layout.js"></script>
     <!-- Bootstrap Css -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- jquery library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- fontawesome kit -->
+    <script src="https://kit.fontawesome.com/a7c12d2dfa.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -43,19 +57,19 @@
                 <div class="navbar-brand-box horizontal-logo">
                     <a href="index.html" class="logo logo-dark">
                         <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                            <img src="/assets/images/logo-sm.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="assets/images/logo-dark.png" alt="" height="17">
+                            <img src="/assets/images/logo-dark.png" alt="" height="17">
                         </span>
                     </a>
 
                     <a href="index.html" class="logo logo-light">
                         <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                            <img src="/assets/images/logo-sm.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="assets/images/logo-light.png" alt="" height="17">
+                            <img src="/assets/images/logo-light.png" alt="" height="17">
                         </span>
                     </a>
                 </div>
@@ -118,7 +132,7 @@
                                 <!-- item -->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
                                     <div class="d-flex">
-                                        <img src="assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <img src="/assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                         <div class="flex-grow-1">
                                             <h6 class="m-0">Angela Bernier</h6>
                                             <span class="fs-11 mb-0 text-muted">Manager</span>
@@ -128,7 +142,7 @@
                                 <!-- item -->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
                                     <div class="d-flex">
-                                        <img src="assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <img src="/assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                         <div class="flex-grow-1">
                                             <h6 class="m-0">David Grasso</h6>
                                             <span class="fs-11 mb-0 text-muted">Web Designer</span>
@@ -138,7 +152,7 @@
                                 <!-- item -->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
                                     <div class="d-flex">
-                                        <img src="assets/images/users/avatar-5.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <img src="/assets/images/users/avatar-5.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                         <div class="flex-grow-1">
                                             <h6 class="m-0">Mike Bunch</h6>
                                             <span class="fs-11 mb-0 text-muted">React Developer</span>
@@ -175,54 +189,54 @@
 
                 <div class="dropdown ms-1 topbar-head-dropdown header-item">
                     <button type="button" class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img id="header-lang-img" src="assets/images/flags/us.svg" alt="Header Language" height="20" class="rounded">
+                        <img id="header-lang-img" src="/assets/images/flags/us.svg" alt="Header Language" height="20" class="rounded">
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item language py-2" data-lang="en" title="English">
-                            <img src="assets/images/flags/us.svg" alt="user-image" class="me-2 rounded" height="18">
+                            <img src="/assets/images/flags/us.svg" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">English</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp" title="Spanish">
-                            <img src="assets/images/flags/spain.svg" alt="user-image" class="me-2 rounded" height="18">
+                            <img src="/assets/images/flags/spain.svg" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">Española</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr" title="German">
-                            <img src="assets/images/flags/germany.svg" alt="user-image" class="me-2 rounded" height="18"> <span class="align-middle">Deutsche</span>
+                            <img src="/assets/images/flags/germany.svg" alt="user-image" class="me-2 rounded" height="18"> <span class="align-middle">Deutsche</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it" title="Italian">
-                            <img src="assets/images/flags/italy.svg" alt="user-image" class="me-2 rounded" height="18">
+                            <img src="/assets/images/flags/italy.svg" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">Italiana</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru" title="Russian">
-                            <img src="assets/images/flags/russia.svg" alt="user-image" class="me-2 rounded" height="18">
+                            <img src="/assets/images/flags/russia.svg" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">русский</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ch" title="Chinese">
-                            <img src="assets/images/flags/china.svg" alt="user-image" class="me-2 rounded" height="18">
+                            <img src="/assets/images/flags/china.svg" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">中国人</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="fr" title="French">
-                            <img src="assets/images/flags/french.svg" alt="user-image" class="me-2 rounded" height="18">
+                            <img src="/assets/images/flags/french.svg" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">français</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ar" title="Arabic">
-                            <img src="assets/images/flags/ae.svg" alt="user-image" class="me-2 rounded" height="18">
+                            <img src="/assets/images/flags/ae.svg" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">Arabic</span>
                         </a>
                     </div>
@@ -249,19 +263,19 @@
                             <div class="row g-0">
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/images/brands/github.png" alt="Github">
+                                        <img src="/assets/images/brands/github.png" alt="Github">
                                         <span>GitHub</span>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
+                                        <img src="/assets/images/brands/bitbucket.png" alt="bitbucket">
                                         <span>Bitbucket</span>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/images/brands/dribbble.png" alt="dribbble">
+                                        <img src="/assets/images/brands/dribbble.png" alt="dribbble">
                                         <span>Dribbble</span>
                                     </a>
                                 </div>
@@ -270,19 +284,19 @@
                             <div class="row g-0">
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/images/brands/dropbox.png" alt="dropbox">
+                                        <img src="/assets/images/brands/dropbox.png" alt="dropbox">
                                         <span>Dropbox</span>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/images/brands/mail_chimp.png" alt="mail_chimp">
+                                        <img src="/assets/images/brands/mail_chimp.png" alt="mail_chimp">
                                         <span>Mail Chimp</span>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/images/brands/slack.png" alt="slack">
+                                        <img src="/assets/images/brands/slack.png" alt="slack">
                                         <span>Slack</span>
                                     </a>
                                 </div>
@@ -321,7 +335,7 @@
                                 </div>
                                 <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                     <div class="d-flex align-items-center">
-                                        <img src="assets/images/products/img-1.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
+                                        <img src="/assets/images/products/img-1.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                         <div class="flex-grow-1">
                                             <h6 class="mt-0 mb-1 fs-14">
                                                 <a href="apps-ecommerce-product-details.html" class="text-reset">Branded
@@ -342,7 +356,7 @@
 
                                 <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                     <div class="d-flex align-items-center">
-                                        <img src="assets/images/products/img-2.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
+                                        <img src="/assets/images/products/img-2.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                         <div class="flex-grow-1">
                                             <h6 class="mt-0 mb-1 fs-14">
                                                 <a href="apps-ecommerce-product-details.html" class="text-reset">Bentwood Chair</a>
@@ -362,7 +376,7 @@
 
                                 <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                     <div class="d-flex align-items-center">
-                                        <img src="assets/images/products/img-3.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
+                                        <img src="/assets/images/products/img-3.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                         <div class="flex-grow-1">
                                             <h6 class="mt-0 mb-1 fs-14">
                                                 <a href="apps-ecommerce-product-details.html" class="text-reset">
@@ -383,7 +397,7 @@
 
                                 <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                     <div class="d-flex align-items-center">
-                                        <img src="assets/images/products/img-6.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
+                                        <img src="/assets/images/products/img-6.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                         <div class="flex-grow-1">
                                             <h6 class="mt-0 mb-1 fs-14">
                                                 <a href="apps-ecommerce-product-details.html" class="text-reset">Gray
@@ -404,7 +418,7 @@
 
                                 <div class="d-block dropdown-item dropdown-item-cart text-wrap px-3 py-2">
                                     <div class="d-flex align-items-center">
-                                        <img src="assets/images/products/img-5.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
+                                        <img src="/assets/images/products/img-5.png" class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                         <div class="flex-grow-1">
                                             <h6 class="mt-0 mb-1 fs-14">
                                                 <a href="apps-ecommerce-product-details.html" class="text-reset">Stillbird Helmet</a>
@@ -523,7 +537,7 @@
 
                                     <div class="text-reset notification-item d-block dropdown-item position-relative">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic">
+                                            <img src="/assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic">
                                             <div class="flex-grow-1">
                                                 <a href="#!" class="stretched-link">
                                                     <h6 class="mt-0 mb-1 fs-13 fw-semibold">Angela Bernier</h6>
@@ -572,7 +586,7 @@
 
                                     <div class="text-reset notification-item d-block dropdown-item position-relative">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-8.jpg" class="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic">
+                                            <img src="/assets/images/users/avatar-8.jpg" class="me-3 rounded-circle avatar-xs flex-shrink-0" alt="user-pic">
                                             <div class="flex-grow-1">
                                                 <a href="#!" class="stretched-link">
                                                     <h6 class="mt-0 mb-1 fs-13 fw-semibold">Maureen Gibson</h6>
@@ -605,7 +619,7 @@
                                 <div data-simplebar style="max-height: 300px;" class="pe-2">
                                     <div class="text-reset notification-item d-block dropdown-item">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                            <img src="/assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                             <div class="flex-grow-1">
                                                 <a href="#!" class="stretched-link">
                                                     <h6 class="mt-0 mb-1 fs-13 fw-semibold">James Lemire</h6>
@@ -628,7 +642,7 @@
 
                                     <div class="text-reset notification-item d-block dropdown-item">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                            <img src="/assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                             <div class="flex-grow-1">
                                                 <a href="#!" class="stretched-link">
                                                     <h6 class="mt-0 mb-1 fs-13 fw-semibold">Angela Bernier</h6>
@@ -652,7 +666,7 @@
 
                                     <div class="text-reset notification-item d-block dropdown-item">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-6.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                            <img src="/assets/images/users/avatar-6.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                             <div class="flex-grow-1">
                                                 <a href="#!" class="stretched-link">
                                                     <h6 class="mt-0 mb-1 fs-13 fw-semibold">Kenneth Brown</h6>
@@ -676,7 +690,7 @@
 
                                     <div class="text-reset notification-item d-block dropdown-item">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-8.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                            <img src="/assets/images/users/avatar-8.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                             <div class="flex-grow-1">
                                                 <a href="#!" class="stretched-link">
                                                     <h6 class="mt-0 mb-1 fs-13 fw-semibold">Maureen Gibson</h6>
@@ -717,7 +731,7 @@
                 <div class="dropdown ms-sm-3 header-item topbar-user">
                     <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="d-flex align-items-center">
-                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                            <img class="rounded-circle header-profile-user" src="/assets/images/users/avatar-1.jpg" alt="Header Avatar">
                             <span class="text-start ms-xl-2">
                                 <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
                                 <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Founder</span>
@@ -774,19 +788,19 @@
                 <!-- Dark Logo-->
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="17">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17">
                     </span>
                 </a>
                 <!-- Light Logo-->
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-light.png" alt="" height="17">
+                        <img src="/assets/images/logo-light.png" alt="" height="17">
                     </span>
                 </a>
                 <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -797,7 +811,7 @@
             <div class="dropdown sidebar-user m-1 rounded">
                 <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="d-flex align-items-center gap-2">
-                        <img class="rounded header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                        <img class="rounded header-profile-user" src="/assets/images/users/avatar-1.jpg" alt="Header Avatar">
                         <span class="text-start">
                             <span class="d-block fw-medium sidebar-user-name-text">Anna Adame</span>
                             <span class="d-block fs-14 sidebar-user-name-sub-text"><i class="ri ri-circle-fill fs-10 text-success align-baseline"></i> <span class="align-middle">Online</span></span>
@@ -1880,6 +1894,19 @@
             <div class="page-content">
                 <div class="container-fluid">
                     <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
+                                <h4 class="mb-sm-0">{{ formatUrlPath(Request::segment(1)) }}</h4>
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);" class="text-capitalize">{{ formatUrlPath(Request::segment(1)) }}</a></li>
+                                        <li class="breadcrumb-item active text-capitalize">{{ formatUrlPath(Request::segment(2)) }}</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
             
                         {{$slot}}
 
@@ -2061,7 +2088,7 @@
                             <div class="form-check card-radio">
                                 <input id="customizer-theme01" name="data-theme" type="radio" value="default" class="form-check-input">
                                 <label class="form-check-label p-0" for="customizer-theme01">
-                                    <img src="../../assets/images/demo/default.png" alt="" class="img-fluid">
+                                    <img src="/assets/images/demo/default.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="fs-13 text-center fw-medium mt-2">Default</h5>
@@ -2070,7 +2097,7 @@
                             <div class="form-check card-radio">
                                 <input id="customizer-theme02" name="data-theme" type="radio" value="saas" class="form-check-input">
                                 <label class="form-check-label p-0" for="customizer-theme02">
-                                    <img src="../../assets/images/demo/saas.png" alt="" class="img-fluid">
+                                    <img src="/assets/images/demo/saas.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="fs-13 text-center fw-medium mt-2">Sass</h5>
@@ -2079,7 +2106,7 @@
                             <div class="form-check card-radio">
                                 <input id="customizer-theme03" name="data-theme" type="radio" value="corporate" class="form-check-input">
                                 <label class="form-check-label p-0" for="customizer-theme03">
-                                    <img src="../../assets/images/demo/corporate.png" alt="" class="img-fluid">
+                                    <img src="/assets/images/demo/corporate.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="fs-13 text-center fw-medium mt-2">Corporate</h5>
@@ -2088,7 +2115,7 @@
                             <div class="form-check card-radio">
                                 <input id="customizer-theme04" name="data-theme" type="radio" value="galaxy" class="form-check-input">
                                 <label class="form-check-label p-0" for="customizer-theme04">
-                                    <img src="../../assets/images/demo/galaxy.png" alt="" class="img-fluid">
+                                    <img src="/assets/images/demo/galaxy.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="fs-13 text-center fw-medium mt-2">Galaxy</h5>
@@ -2097,7 +2124,7 @@
                             <div class="form-check card-radio">
                                 <input id="customizer-theme05" name="data-theme" type="radio" value="material" class="form-check-input">
                                 <label class="form-check-label p-0" for="customizer-theme05">
-                                    <img src="../../assets/images/demo/material.png" alt="" class="img-fluid">
+                                    <img src="/assets/images/demo/material.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="fs-13 text-center fw-medium mt-2">Material</h5>
@@ -2106,7 +2133,7 @@
                             <div class="form-check card-radio">
                                 <input id="customizer-theme06" name="data-theme" type="radio" value="creative" class="form-check-input">
                                 <label class="form-check-label p-0" for="customizer-theme06">
-                                    <img src="../../assets/images/demo/creative.png" alt="" class="img-fluid">
+                                    <img src="/assets/images/demo/creative.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="fs-13 text-center fw-medium mt-2">Creative</h5>
@@ -2115,7 +2142,7 @@
                             <div class="form-check card-radio">
                                 <input id="customizer-theme07" name="data-theme" type="radio" value="minimal" class="form-check-input">
                                 <label class="form-check-label p-0" for="customizer-theme07">
-                                    <img src="../../assets/images/demo/minimal.png" alt="" class="img-fluid">
+                                    <img src="/assets/images/demo/minimal.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="fs-13 text-center fw-medium mt-2">Minimal</h5>
@@ -2124,7 +2151,7 @@
                             <div class="form-check card-radio">
                                 <input id="customizer-theme08" name="data-theme" type="radio" value="modern" class="form-check-input">
                                 <label class="form-check-label p-0" for="customizer-theme08">
-                                    <img src="../../assets/images/demo/modern.png" alt="" class="img-fluid">
+                                    <img src="/assets/images/demo/modern.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="fs-13 text-center fw-medium mt-2">Modern</h5>
@@ -2134,7 +2161,7 @@
                             <div class="form-check card-radio">
                                 <input id="customizer-theme09" name="data-theme" type="radio" value="interactive" class="form-check-input">
                                 <label class="form-check-label p-0" for="customizer-theme09">
-                                    <img src="../../assets/images/demo/interactive.png" alt="" class="img-fluid">
+                                    <img src="/assets/images/demo/interactive.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="fs-13 text-center fw-medium mt-2">Interactive</h5>
@@ -2144,7 +2171,7 @@
                             <div class="form-check card-radio">
                                 <input id="customizer-theme10" name="data-theme" type="radio" value="classic" class="form-check-input">
                                 <label class="form-check-label p-0" for="customizer-theme10">
-                                    <img src="../../assets/images/demo/classic.jpg" alt="" class="img-fluid">
+                                    <img src="/assets/images/demo/classic.jpg" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="fs-13 text-center fw-medium mt-2">Classic</h5>
@@ -2154,7 +2181,7 @@
                             <div class="form-check card-radio">
                                 <input id="customizer-theme11" name="data-theme" type="radio" value="vintage" class="form-check-input">
                                 <label class="form-check-label p-0" for="customizer-theme11">
-                                    <img src="../../assets/images/demo/vintage.jpg" alt="" class="img-fluid">
+                                    <img src="/assets/images/demo/vintage.jpg" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="fs-13 text-center fw-medium mt-2">Vintage</h5>
@@ -2676,26 +2703,26 @@
                             <div class="form-check sidebar-setting card-radio">
                                 <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-01" value="img-1">
                                 <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-01">
-                                    <img src="assets/images/sidebar/img-1.jpg" alt="" class="avatar-md w-auto object-fit-cover">
+                                    <img src="/assets/images/sidebar/img-1.jpg" alt="" class="avatar-md w-auto object-fit-cover">
                                 </label>
                             </div>	
 
                             <div class="form-check sidebar-setting card-radio">
                                 <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-02" value="img-2">
                                 <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-02">
-                                    <img src="assets/images/sidebar/img-2.jpg" alt="" class="avatar-md w-auto object-fit-cover">
+                                    <img src="/assets/images/sidebar/img-2.jpg" alt="" class="avatar-md w-auto object-fit-cover">
                                 </label>
                             </div>
                             <div class="form-check sidebar-setting card-radio">
                                 <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-03" value="img-3">
                                 <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-03">
-                                    <img src="assets/images/sidebar/img-3.jpg" alt="" class="avatar-md w-auto object-fit-cover">
+                                    <img src="/assets/images/sidebar/img-3.jpg" alt="" class="avatar-md w-auto object-fit-cover">
                                 </label>
                             </div>
                             <div class="form-check sidebar-setting card-radio">
                                 <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-04" value="img-4">
                                 <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-04">
-                                    <img src="assets/images/sidebar/img-4.jpg" alt="" class="avatar-md w-auto object-fit-cover">
+                                    <img src="/assets/images/sidebar/img-4.jpg" alt="" class="avatar-md w-auto object-fit-cover">
                                 </label>
                             </div>
                         </div>
@@ -2869,42 +2896,36 @@
         </div>
     </div>
 
-    <script>
-        setDeafaultUI();
-        async function setDeafaultUI(){
-            let defaultSessionStorageAttr = await sessionStorage.getItem("defaultAttribute");
-            let modifiedSessionAttr = JSON.parse(defaultSessionStorageAttr);
-            modifiedSessionAttr.data-bs-theme = "dark";
-            modifiedSessionAttr.data-preloader = "enable";
-            await sessionStorage.setItem("defaultAttribute", JSON.stringify(modifiedSessionAttr));
-        }
-    </script>
-
     <!-- JAVASCRIPT -->
-    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/node-waves/waves.min.js"></script>
-    <script src="assets/libs/feather-icons/feather.min.js"></script>
-    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="assets/js/plugins.js"></script>
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="/assets/js/plugins.js"></script>
 
     <!-- apexcharts -->
-    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
 
     <!-- Vector map-->
-    <script src="assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
-    <script src="assets/libs/jsvectormap/maps/world-merc.js"></script>
+    <script src="/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+    <script src="/assets/libs/jsvectormap/maps/world-merc.js"></script>
 
     <!--Swiper slider js-->
-    <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Dashboard init -->
-    <script src="assets/js/pages/dashboard-ecommerce.init.js"></script>
+    <!-- validation init -->
+    <script src="/assets/js/pages/form-validation.init.js"></script>
+
+    <!-- custom js -->
+    <script src="/assets/custom/js/jquery.form.min.js"></script>
+    <script src="/assets/custom/js/submit.js"></script>
+    <script src="/assets/custom/js/boostrapToaster.js"></script>
+
+    <!-- material icons -->
+    <script src="/assets/js/pages/materialdesign.list.js"></script>
 
     <!-- App js -->
-    <script src="assets/js/app.js"></script>
+    <script src="/assets/js/app.js"></script>
 </body>
-
-
-<!-- Mirrored from themesbrand.com/velzon/html/master/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Aug 2024 07:45:33 GMT -->
 </html>
